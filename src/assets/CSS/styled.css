@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.cabecalho {
+    height: 100px;
+    background-color: #444f45;
+    flex-direction: row;
+    justify-content: center;
+    flex: 1;
+}
+
+.logo {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagem-logo {
+    max-width: 80px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex: 5;
+    padding-left: 50px;
+}
+
+.menu ul {
+    gap: 30px;   
+}
+
+.menu li {
+    list-style: none;
+}
+
+.menu li a{
+    text-decoration: none;
+    font-size: 22px;
+    color: #d0d4d2;
+    font-family: 'lobster-regular', sans-serif;
+    letter-spacing: 0.5;
+
+}
+
+
+.menu li:hover {
+    cursor: pointer;
+    color: #d0d4d29b;
+    text-decoration: underline;
+}
