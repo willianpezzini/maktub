@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,13 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="./src/assets/CSS/styled.css">
     <link rel="stylesheet" href="./src/assets/CSS/ui--kit.css">
 </head>
+
 <body>
     <header>
         <div class="cabecalho flex flex--direction--row width--100">
@@ -36,19 +39,20 @@
             <section class="carrossel">
                 <div class="slides-automaticos" id="slides">
                     <div class="slide">
-                        <img src="./src/assets/images/Logo-Fundo-Verde.png" height="500px" alt="Logo Maktub com o fundo verde">
+                        <img src="./src/assets/images/Logo-Fundo-Verde.png" alt="Logo Maktub com o fundo verde">
                     </div>
                     <div class="slide">
-                        <img src="./src/assets/images/Logo-Fundo-Cinza.png" height="500px" alt="Logo Maktub com o fundo verde">
+                        <img src="./src/assets/images/Logo-Fundo-Cinza.png" height="000px"
+                            alt="Logo Maktub com o fundo verde">
                     </div>
                     <div class="slide">
-                        <img src="./src/assets/images/Logo-Fundo-Verde.png" height="500px" alt="Logo Maktub com o fundo verde">
+                        <img src="./src/assets/images/Logo-Fundo-Verde.png" alt="Logo Maktub com o fundo verde">
                     </div>
                     <div class="slide">
-                        <img src="./src/assets/images/Logo-Fundo-Cinza.png" height="500px" alt="Logo Maktub com o fundo verde">
+                        <img src="./src/assets/images/Logo-Fundo-Cinza.png" alt="Logo Maktub com o fundo verde">
                     </div>
 
-                   
+
                 </div>
 
                 <button class="nav-arrow prev" id="prevBtn">&#10094;</button>
@@ -59,10 +63,49 @@
                     <span class="manual-btn" data-index="1"></span>
                     <span class="manual-btn" data-index="2"></span>
                     <span class="manual-btn" data-index="3"></span>
-                </div>    
+                </div>
+            </section>
+
+            <section class="area-planos">
+
+                <div class="texto-planos">
+                    <h2>NOSSOS PLANOS</h2>
+                </div>
+                <div class="slide-botao">
+                    <button class="nav-arrow-planos manual-btn-planos next" id="prevBtnPlanos">&#10094;</button>
+
+                    <div class="slides-planos">
+                        <div class="slide-plano" id="slide-planos">
+                            <img src="./src/assets/images/Logo-Fundo-Verde.png" height="500px"
+                                alt="Logo Maktub com o fundo verde">
+                        </div>
+                        <div class="slide-plano">
+                            <img src="./src/assets/images/Logo-Fundo-Cinza.png" height="500px"
+                                alt="Logo Maktub com o fundo verde">
+                        </div>
+                        <div class="slide-plano">
+                            <img src="./src/assets/images/Logo-Fundo-Verde.png" height="500px"
+                                alt="Logo Maktub com o fundo verde">
+                        </div>
+                        <div class="slide-plano">
+                            <img src="./src/assets/images/Logo-Fundo-Cinza.png" height="500px"
+                                alt="Logo Maktub com o fundo verde">
+                        </div>
+                    </div>
+
+                    <button class="nav-arrow-planos manual-btn-planos next" id="nextBtnPlanos">&#10095;</button>
+
+                    <div class="navigation-manual">
+                        <span class="btn-troca" data-index="0"></span>
+                        <span class="btn-troca" data-index="1"></span>
+                        <span class="btn-troca" data-index="2"></span>
+                        <span class="btn-troca" data-index="3"></span>
+                    </div>
+                </div>   
             </section>
         </article>
     </main>
-<script src="./src/assets/script/script.js"></script>
+    <script src="./src/assets/script/script.js"></script>
 </body>
+
 </html>
