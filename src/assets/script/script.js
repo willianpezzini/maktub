@@ -1,36 +1,46 @@
-const slides = document.getElementById('slides');
-const buttons = document.querySelectorAll('.manual-btn');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
+const slidesPrincipal = document.getElementById('slides-automaticos');
+const buttonsPrincipal = document.querySelectorAll('.manual-btn');
+const prevBtnPrincipal = document.getElementById('prevBtnPrincipal');
+const nextBtnPrincipal = document.getElementById('nextBtnPrincipal');
 
 
 
-let index = 0;
-const total = buttons.length;
+let indexPrincipal = 0;
+const totalPrincipal = buttonsPrincipal.length;
 
-
-function autoPlay() {
-    index = (index + 1) % total;
-    showSlide(index);
+function showSlidePrincipal(i) {
+    slidesPrincipal.style.transform =`translateX(-${i * 100}%)`;
+    buttonsPrincipal.forEach(btn => btn.classList.remove('active'));
+    if (buttonsPrincipal[i]) buttonsPrincipal[i].classList.add('active');
+    indexPrincipal = i;
 }
 
-function showSlidePlanos(i) {
-    slidesPlanos.style.transform =`translateX(-${i * 100}%)`;
-    buttonsPlanos.forEach(btn => btn.classList.remove('active'));
-    buttonsPlanos[i].classList.add('active');
-    index2 = i;
-}
-
-buttonsPlanos.forEach(btn=> {
+buttonsPrincipal.forEach(btn=> {
     btn.addEventListener('click', () => {
-        showSlide(Number(btn.CDATA_SECTION_NODE.index));
+        showSlidePrincipal(Number(btn.dataset.index));
     });
 });
 
-showSlide(0);
+prevBtnPrincipal.addEventListener('click', () => {
+    indexPrincipal = (indexPrincipal - 1 + totalPrincipal) % totalPrincipal;
+    showSlidePrincipal(indexPrincipal);
+    console.log('Clicou para voltar');
+});
+
+nextBtnPrincipal.addEventListener('click', () => {
+    indexPrincipal = (indexPrincipal + 1) % totalPrincipal;
+    showSlidePrincipal(indexPrincipal);
+    console.log('Clicou para avançar');
+});
+
+function autoPlay() {
+    indexPrincipal = (indexPrincipal + 1) % totalPrincipal;
+    showSlidePrincipal(indexPrincipal);
+};
+
+showSlidePrincipal(0);
 setInterval(autoPlay, 3000);
 
-showSlidePlanos(4);
 
 const slidesPlanos = document.getElementById('slides-planos');
 const buttonsPlanos = document.querySelectorAll('.manual-btn-planos');
@@ -41,13 +51,12 @@ let indexPlanos = 0;
 const totalPlanos = buttonsPlanos.length;
 
 function showSlidePlanos(i) {
-    slidesPlanos.style.transform = `translateX(-${i * 100}%)`;
+    slidesPlanos.style.transform =`translateX(-${i * 100}%)`;
     buttonsPlanos.forEach(btn => btn.classList.remove('active'));
-    if (buttonsPlanos[i]) {
-        buttonsPlanos[i].classList.add('active');
-    }
+    if (buttonsPlanos[i]) buttonsPlanos[i].classList.add('active');
     indexPlanos = i;
 }
+
 
 buttonsPlanos.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -58,11 +67,13 @@ buttonsPlanos.forEach(btn => {
 prevBtnPlanos.addEventListener('click', () => {
     indexPlanos = (indexPlanos - 1 + totalPlanos) % totalPlanos;
     showSlidePlanos(indexPlanos);
+    console.log('Clicou para voltar')
 });
 
 nextBtnPlanos.addEventListener('click', () => {
     indexPlanos = (indexPlanos + 1) % totalPlanos;
     showSlidePlanos(indexPlanos);
+    console.log('Clicou para avançar')
 });
 
 showSlidePlanos(0);
